@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* LAYOUT WITH GRID */
+.grid, .header, .feature,
+.article, .sign, .content, .pic {
+    font-size: 40px;
+    color: #0040ff;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 300px 150px 350px;
+    grid-template-areas: 
+    'header header header'
+    'feature article picture'
+    'sign sign sign'
+    'content content content'
+    'content content content';
+}
+.header {
+    background-color: #0af2d7;
+}
+.feature {
+    background-color: brown;
+}
+.article {
+    background-color: burlywood;
+}
+.sign {
+    background-color: chartreuse;
+}
+.content {
+    background-color: crimson;
+}
+.pic {
+    background-color: darkorange;
+}
+/* responsive */
+@media screen and (max-width: 768px) {
+    .grid2 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 140px 350px 150px 150px;
+        grid-template-areas: 
+        'header header'
+        'content content'
+        'content content'
+        'sign picture'
+        'feature article'
+        ;
+        height: 123vh;
+    }
+}
+@media screen and (max-width: 568px) {
+    .grid2 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 140px 350px repeat(4, 150px);
+        grid-template-areas: 
+        'header'
+        'content'
+        'content'
+        'sign'
+        'feature'
+        'picture'
+        'article'
+        ;
+        height: 165vh;
+    }
+}
+
+
+
+/* GRID RESPONSIVE NEED CONTENT FOR THE WIDTH AND HEIGHT */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+    margin-top: 70px;
+}
+.item {
+    border-radius: 1em;
+}
